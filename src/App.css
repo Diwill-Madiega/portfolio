@@ -1,0 +1,37 @@
+
+.navbar {
+  transition: background-color 0.5s ease-in-out;
+  margin-bottom: 10rem; 
+}
+
+.card-dark{
+  background-color: rgb(0, 0, 134) !important; 
+}
+
+.card-light{
+  background-color: rgb(255, 0, 0) !important; 
+ }
+
+.bg-navbar-start-light{
+  background-color: rgb(225, 225, 225) !important; 
+ }
+ 
+ .bg-navbar-end-light{
+   background-color: rgb(55, 165, 255) !important; 
+  }
+
+.bg-navbar-start-dark{
+ background-color: rgb(60, 60, 65) !important; 
+}
+
+.bg-navbar-end-dark{
+  background-color: rgb(120, 0, 0) !important; 
+ }
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
