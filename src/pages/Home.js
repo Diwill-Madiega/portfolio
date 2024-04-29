@@ -17,6 +17,7 @@ function Home() {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', gap: '40px', padding: '40px' }}>
         <CardObject
+
           title="Lizard"
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
           image={require("assets/images/bg-coworking.jpeg")}

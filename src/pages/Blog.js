@@ -1,15 +1,23 @@
-import React from 'react';
-import { useTranslation } from "react-i18next";
-import '../App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import PostsList from "../components/PostsList";
+import PostDetail from "../components/PostDetail";
 
-function Blog() {
-  const { t } = useTranslation(); // Destructure 't' from the useTranslation hook
-
+const Blog = () => {
   return (
-    <div style={{minHeight:"1000px"}}>
-    <h1 class="text-center">Voici mon blog. C'est l'heure de discuter!</h1>
-    </div>
+    <Container>
+      <Row className="my-4">
+        <Col md={12}>
+          <h1 className="text-center">Mon Blog</h1><br/>
+          <Routes>
+            <Route path="/" element={<PostsList />} />
+            <Route path=":postId" element={<PostDetail />} />
+          </Routes>
+        </Col>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Blog;

@@ -13,7 +13,8 @@ import MKTypography from "components/MKTypography";
 
 function Footer() {
   return (
-    <MKBox component="section" py={{ xs: 3, md: 12 }}>
+    <>
+    <MKBox component="section" py={{ xs: 3, md: 12 }}><hr />
       <Container>
         <Grid container alignItems="center">
           <Grid item xs={12} lg={5}>
@@ -100,6 +101,7 @@ function Footer() {
         </Grid>
       </Container>
     </MKBox>
+    </>
   );
 }
 

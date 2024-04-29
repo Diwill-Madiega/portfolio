@@ -29,12 +29,13 @@ function CardObject({ title, description, image, theme }) {
     // Define styles based on the theme
     const cardStyles = {
       maxWidth: 345,
+      
     };
   
     console.log(theme);
     return (
       <Card sx={cardStyles}>
-        <CardMedia className={sessionStorage.getItem("darkMode") ? "card-dark" : "card-light"}
+        <CardMedia 
           sx={{ height: 140 }}
           image={image}
           title={title}
