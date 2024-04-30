@@ -1,4 +1,3 @@
-// src/components/PostsList.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PostCard from "./PostCard";
@@ -20,11 +19,13 @@ const PostsList = () => {
   }, []);
 
   return (
+    <>
     <div className="posts-list">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
     </div>
+    </>
   );
 };
 

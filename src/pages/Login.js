@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Login = ({ onLogin }) => {
   const { t } = useTranslation();
@@ -22,40 +24,44 @@ const Login = ({ onLogin }) => {
         if (data.token) {
           onLogin(data.token);
         } else {
-          setError("Invalid credentials");
+          setError(t("InvalidCredentials"));
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setError("An error occurred");
       });
   };
 
   return (
-    <div>
+    <>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2>{t("LoginTitle")}</h2><br/>
       <div>
-        <label>{t("Username")}</label><br />
+        <label>{t("Username")}</label>
+        <br />
         <input
           className="form-group"
           type="text"
-          style={{margin: "8px 8px 8px 0px" }}
+          style={{margin: "0px 0px 10px 0px" }}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
-        <label>{t("Password")}</label><br />
+        <label>{t("Password")}</label>
+        <br />
         <input
           className="form-group"
           type="password"
-          style={{margin: "8px 8px 8px 0px" }}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div><br />
-      <button className="btn btn-primary" onClick={handleLogin}>{t("LoginButton")}</button>
-      {error && <p>{error}</p>}
+      <button className="btn btn-primary" onClick={handleLogin}> <FontAwesomeIcon icon={faRightToBracket} /> {t("LoginButton")}</button>
+      <br/>
+      {error && <p className="alert alert-danger">{error}</p>}
     </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import '../App.css';
 
 function Contact() {
-  const { t } = useTranslation(); // Destructure 't' from the useTranslation hook
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,11 +20,11 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData); // Example: Logging form data
+    console.log(formData);
   };
 
   return (
+    <>
     <div style={{minHeight:"1000px"}}>
       <h1 className="text-center">{t("ContactTitle")}</h1>
       <form onSubmit={handleSubmit}>
@@ -67,6 +67,7 @@ function Contact() {
         <button type="submit" className="btn btn-primary">{t("ContactSend")}</button>
       </form>
     </div>
+    </>
   );
 }
 
