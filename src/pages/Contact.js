@@ -26,10 +26,10 @@ function Contact() {
 
   return (
     <div style={{minHeight:"1000px"}}>
-      <h1 className="text-center">{t("Contact")}</h1>
+      <h1 className="text-center">{t("ContactTitle")}</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">{t("Name")}:</label>
+          <label htmlFor="name">{t("ContactName")}:</label>
           <input
             type="text"
             className="form-control"
@@ -41,7 +41,7 @@ function Contact() {
           />
         </div><br />
         <div className="form-group">
-          <label htmlFor="email">{t("Email")}:</label>
+          <label htmlFor="email">{t("ContactEmail")}:</label>
           <input
             type="email"
             className="form-control"
@@ -53,7 +53,7 @@ function Contact() {
           />
         </div><br />
         <div className="form-group">
-          <label htmlFor="message">{t("Message")}:</label>
+          <label htmlFor="message">{t("ContactMessage")}:</label>
           <textarea
             className="form-control"
             id="message"
@@ -64,7 +64,7 @@ function Contact() {
             required
           ></textarea>
         </div><br />
-        <button type="submit" className="btn btn-primary">{t("Send")}</button>
+        <button type="submit" className="btn btn-primary">{t("ContactSend")}</button>
       </form>
     </div>
   );

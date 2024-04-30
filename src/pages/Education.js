@@ -7,7 +7,7 @@ function Blog() {
 
   return (
     <div style={{minHeight:"1000px"}}>
-    <h1 class="text-center">Mon Education</h1>
+    <h1 class="text-center">{t("EducationTitle")}</h1>
     </div>
   );
 }

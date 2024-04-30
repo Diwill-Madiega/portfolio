@@ -31,8 +31,7 @@ function CardObject({ title, description, image, theme }) {
       maxWidth: 345,
       
     };
-  
-    console.log(theme);
+
     return (
       <Card sx={cardStyles}>
         <CardMedia 

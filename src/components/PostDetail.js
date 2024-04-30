@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PostDetail = () => {
+  const { t } = useTranslation();
   const { postId } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
@@ -65,7 +67,7 @@ const PostDetail = () => {
       >
               <hr /> {/* Divider */}
         <div>
-          <label htmlFor="title">Edit title:</label><br/>
+          <label htmlFor="title">{t("EditTitle")}</label><br/>
           <input
             className="form-group form-control"
             id="title"
@@ -75,7 +77,7 @@ const PostDetail = () => {
           />
         </div>
         <div>
-          <label htmlFor="body">Edit content:</label><br/>
+          <label htmlFor="body">{t("EditContent")}</label><br/>
           <textarea
             className="form-group form-control"
             id="body"
@@ -85,29 +87,29 @@ const PostDetail = () => {
             onChange={(e) => setBody(e.target.value)}
           />
         </div>
-        <button className="btn btn-primary" type="submit">Save Changes</button>
-        <button className="btn btn-danger" onClick={deletePost} style={{ margin: "8px" }}>Delete Post</button>
+        <button className="btn btn-primary" type="submit">{t("SaveChangesButton")}</button>
+        <button className="btn btn-danger" onClick={deletePost} style={{ margin: "8px" }}>{t("DeletePostButton")}</button>
       </form>
         <br />
       
 
       
-      <h2>Current Post Preview:</h2>
+      <h2>{t("PostPreview")}</h2>
       <h3>{title}</h3>
       <p>{body}</p>
       
       <hr /> {/* Divider */}
       
-      <h3>Comments:</h3>
+      <h3>{t("BlogComments")}</h3>
       {comments.length > 0 ? (
         comments.map((comment) => (
           <div key={comment.id}>
-            <strong>{comment.user.username} says:</strong>
+            <strong>{comment.user.username} :</strong>
             <p>{comment.body}</p>
           </div>
         ))
       ) : (
-        <p>No comments for this post.</p>
+        <p>{t("NoComments")}</p>
       )}
     </div>
   );

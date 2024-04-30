@@ -14,8 +14,14 @@ function Home() {
   }, []); 
 
   return (
+    <div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h1>{t("HomeTitle")}</h1>
+        <h2>{t("HomeWelcome")}</h2>
+      </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', gap: '40px', padding: '40px' }}>
+
         <CardObject
 
           title="Lizard"
@@ -36,6 +42,7 @@ function Home() {
           theme={currentTheme}
         />
       </div>
+    </div>
     </div>
   );
 }

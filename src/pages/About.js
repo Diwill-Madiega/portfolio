@@ -7,7 +7,7 @@ function About() {
 
   return (
     <div style={{minHeight:"1000px"}}>
-    <h1 class="text-center">{t("About")}</h1>
+    <h1 class="text-center">{t("AboutTitle")}</h1>
     </div>
   );
 }

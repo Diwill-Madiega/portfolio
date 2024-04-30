@@ -21,13 +21,6 @@ const Navbar = ({ changeLanguage }) => {
     sessionStorage.setItem("darkMode", JSON.stringify(newDarkMode));
   };
 
-  // Function to change language
-  const changeLanguageAndStore = (lng) => {
-    changeLanguage(lng);
-    // Store language preference in session storage
-    sessionStorage.setItem("language", lng);
-  };
-
   // Effect to handle scroll and set scroll state
   useEffect(() => {
     const handleScroll = () => {
