@@ -1,4 +1,4 @@
-import "./i18n";
+import "./assets/Helpers/i18n";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom/client";

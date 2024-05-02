@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import '../App.css';
 import CardObject from 'components/Card';
 
 function Home() {
 
-  const { t } = useTranslation(); // Destructure 't' from the useTranslation hook
+  const { t } = useTranslation();
   const currentTheme = document.documentElement.getAttribute("data-bs-theme");
   useEffect(() => {
-    // Get the theme from document element
-
 
   }, []); 
 
   return (
+    <>
     <div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <h1>{t("HomeTitle")}</h1>
@@ -24,19 +23,19 @@ function Home() {
 
         <CardObject
 
-          title="Lizard"
+          title="Godot"
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-          image={require("assets/images/bg-coworking.jpeg")}
+          image={require("assets/images/godot.jpg")}
           theme={currentTheme}
         />
         <CardObject
-          title="Another Title"
+          title="Education"
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-          image={require("assets/images/bg-about-us.jpg")}
+          image={require("assets/images/unity.png")}
           theme={currentTheme}
         />
         <CardObject
-          title="Yet Another Title"
+          title="Projets"
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
           image={require("assets/images/bg-coworking.jpeg")}
           theme={currentTheme}
@@ -44,6 +43,7 @@ function Home() {
       </div>
     </div>
     </div>
+    </>
   );
 }
 

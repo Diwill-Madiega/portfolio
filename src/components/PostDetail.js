@@ -1,5 +1,4 @@
-// src/components/PostDetail.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -48,7 +47,7 @@ const PostDetail = () => {
       .delete(`https://dummyjson.com/posts/${postId}`)
       .then((response) => {
         console.log("Post deleted:", response.data);
-        navigate("/blog"); // Navigate back to the blog list after deletion
+        navigate("/blog");
       })
       .catch((error) => console.error("Error deleting post", error));
   };
@@ -56,6 +55,7 @@ const PostDetail = () => {
   if (!post) return <p>Loading post...</p>;
 
   return (
+    <>
     <div>
       <h1>{post.title}</h1>
       <h3>{post.body}</h3>
@@ -65,7 +65,7 @@ const PostDetail = () => {
           updatePost();
         }}
       >
-              <hr /> {/* Divider */}
+              <hr />
         <div>
           <label htmlFor="title">{t("EditTitle")}</label><br/>
           <input
@@ -98,13 +98,13 @@ const PostDetail = () => {
       <h3>{title}</h3>
       <p>{body}</p>
       
-      <hr /> {/* Divider */}
+      <hr />
       
       <h3>{t("BlogComments")}</h3>
       {comments.length > 0 ? (
         comments.map((comment) => (
           <div key={comment.id}>
-            <strong>{comment.user.username} :</strong>
+            <strong>{comment.user.username}</strong>
             <p>{comment.body}</p>
           </div>
         ))
@@ -112,6 +112,7 @@ const PostDetail = () => {
         <p>{t("NoComments")}</p>
       )}
     </div>
+    </>
   );
 };
 

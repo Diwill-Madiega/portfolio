@@ -54,6 +54,7 @@ const Navbar = ({ changeLanguage }) => {
   }, [changeLanguage, i18n]);
 
   return (
+    <>
     <nav
       className={`navbar navbar-expand-lg ${
         darkMode ? (scroll400 ? "bg-navbar-end-dark" : "bg-navbar-start-dark") : (scroll400 ? "bg-navbar-end-light" : "bg-navbar-start-light")
@@ -133,6 +134,7 @@ const Navbar = ({ changeLanguage }) => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
