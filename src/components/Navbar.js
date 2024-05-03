@@ -120,7 +120,7 @@ const Navbar = ({ changeLanguage }) => {
                 className="btn btn-danger me-2"
                 onClick={handleLogout}
               >
-                Logout
+                {t("Logout")}
               </button>
             </div>
           )}

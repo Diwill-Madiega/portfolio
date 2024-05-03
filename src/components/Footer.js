@@ -1,13 +1,8 @@
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 import Stack from "@mui/material/Stack";
 
-// @mui material components
-
-
-// Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
@@ -18,13 +13,11 @@ function Footer() {
       <Container>
         <Grid container alignItems="center">
           <Grid item xs={12} lg={5}>
-            <MKTypography variant="h3" my={1}>
-              Read More About Us
+            <MKTypography variant="h4" my={1}>
+              Read More About Me
             </MKTypography>
             <MKTypography variant="body2" color="text" mb={2}>
-              Pain is what we go through as we become older. We get insulted by others, lose trust
-              for those others. We get back stabbed by friends. It becomes harder for us to give
-              others a hand.
+              Diwill MADIEGA 2024
             </MKTypography>
             <MKTypography
               component="a"
@@ -48,7 +41,7 @@ function Footer() {
                 },
               }}
             >
-              More about us
+              More about me
               <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
             </MKTypography>
           </Grid>
@@ -70,9 +63,7 @@ function Footer() {
                   <Icon fontSize="small">mediation</Icon>
                 </MKBox>
                 <MKTypography variant="body2" color="text" pl={2}>
-                  It becomes harder for us to give others a hand.
-                  <br />
-                  We get our heart broken by people we love.
+                  Linkedin
                 </MKTypography>
               </MKBox>
               <MKBox display="flex" alignItems="center" p={2}>
@@ -91,9 +82,7 @@ function Footer() {
                   <Icon fontSize="small">token</Icon>
                 </MKBox>
                 <MKTypography variant="body2" color="text" pl={2}>
-                  When we lose family over time.
-                  <br />
-                  What else could rust the heart more over time? Blackgold.
+                  Twitter
                 </MKTypography>
               </MKBox>
             </Stack>

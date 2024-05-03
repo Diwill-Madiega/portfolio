@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import '../App.css';
 
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -10,26 +9,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-
 import { Link } from "react-router-dom";
-
-import { Dropdown } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import "../App.css";
 
 
+function CardObject({ title, description, image }) {
+    const { t } = useTranslation();
 
-function CardObject({ title, description, image, theme }) {
-    const { t } = useTranslation(); // Destructure 't' from the useTranslation hook
-    const [darkMode, setDarkMode] = useState(false);
-
-
-
-    // Define styles based on the theme
     const cardStyles = {
-      maxWidth: 345,
-      
+      maxWidth: 345, 
     };
 
     return (
@@ -48,7 +36,6 @@ function CardObject({ title, description, image, theme }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>

@@ -50,7 +50,7 @@ const PostDetail = () => {
       .then((response) => {
         console.log("Post deleted:", response.data);
         navigate("/blog");
-        toast.success("Post deleted", {
+        toast.success(t("PostDelete"), {
 
         });
       })
@@ -101,13 +101,10 @@ const PostDetail = () => {
         <button className="btn btn-danger" onClick={deletePost} style={{ margin: "8px" }}>{t("DeletePostButton")}</button>
       </form>
         <br />
-      
-
-      
       <h2>{t("PostPreview")}</h2>
       <h3>{title}</h3>
       <p>{body}</p>
-      
+         
       <hr />
       
       <h3>{t("BlogComments")}</h3>

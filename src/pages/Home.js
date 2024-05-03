@@ -24,15 +24,15 @@ function Home() {
 
         <CardObject
 
-          title="Lizard"
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-          image={require("assets/images/bg-coworking.jpeg")}
+          title="Création de sites"
+          description="Utilisation de JavaScript, HTML, CSS pour la conception et développement de sites web de A à Z. Ce site à été créé avec React!"
+          image={require("assets/images/html-css-js.png")}
           theme={currentTheme}
         />
         <CardObject
-          title="Another Title"
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-          image={require("assets/images/bg-about-us.jpg")}
+          title="Développement de Jeux vidéo"
+          description="Développement de jeux vidéos sous les moteurs de jeu Godot et Unity, en langage gdscript et C# respectivement"
+          image={require("assets/images/godot.jpg")}
           theme={currentTheme}
         />
         <CardObject

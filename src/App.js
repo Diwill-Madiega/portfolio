@@ -8,14 +8,14 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Education from "./pages/Education";
+import AddPostForm from "./components/AddPostForm";
 import Blog from "./pages/Blog";
 import { ThemeProvider } from "@mui/material/styles";
 import Login from "./pages/Login";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-
-// Material Kit 2 React themes
 import theme from "assets/theme";
 
 import "./App.css";
@@ -49,6 +49,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/blog/*" element={token ? <Blog token={token} /> : <Navigate to="/login" />} />
+          <Route path="/blog/add" element={<AddPostForm />} />
         </Routes>
         <Footer />
       </div>
