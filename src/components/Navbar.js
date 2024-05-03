@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,19 +9,18 @@ import "../App.css";
 const Navbar = ({ changeLanguage }) => {
   const [scroll400, setScroll400] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
 
-  // Function to toggle dark mode
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
     const theme = newDarkMode ? "dark" : "light";
     document.documentElement.setAttribute("data-bs-theme", theme);
-    // Store dark mode preference in session storage
     sessionStorage.setItem("darkMode", JSON.stringify(newDarkMode));
   };
 
-  // Effect to handle scroll and set scroll state
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
@@ -35,9 +34,7 @@ const Navbar = ({ changeLanguage }) => {
     };
   }, []);
 
-  // Effect to retrieve and apply stored language and theme preferences on component mount
   useEffect(() => {
-    // Retrieve stored dark mode preference
     const storedDarkMode = sessionStorage.getItem("darkMode");
     if (storedDarkMode) {
       setDarkMode(JSON.parse(storedDarkMode));
@@ -45,16 +42,24 @@ const Navbar = ({ changeLanguage }) => {
       document.documentElement.setAttribute("data-bs-theme", theme);
     }
 
-    // Retrieve stored language preference
     const storedLanguage = sessionStorage.getItem("language");
     if (storedLanguage) {
       changeLanguage(storedLanguage);
       i18n.changeLanguage(storedLanguage);
     }
+
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
   }, [changeLanguage, i18n]);
 
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate('/login');
+  };
+
   return (
-    <>
     <nav
       className={`navbar navbar-expand-lg ${
         darkMode ? (scroll400 ? "bg-navbar-end-dark" : "bg-navbar-start-dark") : (scroll400 ? "bg-navbar-end-light" : "bg-navbar-start-light")
@@ -108,8 +113,17 @@ const Navbar = ({ changeLanguage }) => {
                 {t("ContactNav")}
               </Link>
             </li>
-
           </ul>
+          {isLoggedIn && (
+            <div className="navbar-text d-flex align-items-center">
+              <button
+                className="btn btn-danger me-2"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </div>
+          )}
           <div className="navbar-text d-flex align-items-center">
             <button
               className="btn btn-secondary me-2"
@@ -134,7 +148,6 @@ const Navbar = ({ changeLanguage }) => {
         </div>
       </div>
     </nav>
-    </>
   );
 };
 

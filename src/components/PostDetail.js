@@ -2,6 +2,8 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PostDetail = () => {
   const { t } = useTranslation();
@@ -48,8 +50,16 @@ const PostDetail = () => {
       .then((response) => {
         console.log("Post deleted:", response.data);
         navigate("/blog");
+        toast.success("Post deleted", {
+
+        });
       })
-      .catch((error) => console.error("Error deleting post", error));
+      .catch((error) => {
+        console.error("Error deleting post", error);
+        toast.error("Failed to delete post", {
+
+        });
+      });
   };
 
   if (!post) return <p>Loading post...</p>;

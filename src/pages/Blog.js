@@ -9,7 +9,6 @@ const Blog = () => {
   const { t } = useTranslation();
   
   return (
-    <>
     <Container>
       <Row className="my-4">
         <Col md={12}>
@@ -21,7 +20,6 @@ const Blog = () => {
         </Col>
       </Row>
     </Container>
-    </>
   );
 };
 

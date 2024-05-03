@@ -11,6 +11,9 @@ import Education from "./pages/Education";
 import Blog from "./pages/Blog";
 import { ThemeProvider } from "@mui/material/styles";
 import Login from "./pages/Login";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 // Material Kit 2 React themes
 import theme from "assets/theme";
@@ -36,6 +39,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="container mt-4 pt-5">
         <Navbar changeLanguage={changeLanguage} />
+        <ToastContainer />
         <br />
         <Routes>
           <Route path="/" element={<Home />} />

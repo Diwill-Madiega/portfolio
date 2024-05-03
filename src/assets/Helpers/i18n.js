@@ -9,8 +9,6 @@ i18n
     resources: {
       en: {
         translation: {
-        MainTitle : "Portfolio website",
-
         //Navbar
         HomeNav :"Home",
         AboutNav : "About",
@@ -36,7 +34,7 @@ i18n
         LoginTitle : "Login",
         Username : "Username",
         Password : "Password",
-        LoginButton : " Log in",
+        LoginButton : "Log in",
 
         //Blog
         BlogTitle  : "My Blog",
@@ -58,15 +56,10 @@ i18n
         ContactMessage : "Message",
         ContactSend : "Send",
 
-        InvalidCredentials : "Invalid credentials",
-
         },
       },
       fr: {
         translation: {
-        MainTitle : "Site Portfolio",
-
-
         //Navbar
         HomeNav :"Accueil",
         AboutNav : "A propos",
@@ -92,7 +85,7 @@ i18n
         LoginTitle : "Connexion",
         Username : "Nom d'utilisateur",
         Password : "Mot de passe",
-        LoginButton : " Se connecter",
+        LoginButton : "Se connecter",
 
         //Blog
         BlogTitle  : "Mon Blog",
@@ -113,8 +106,6 @@ i18n
         ContactEmail : "E-mail",
         ContactMessage : "Message",
         ContactSend : "Envoyer",
-
-        InvalidCredentials : "Identifiants invalides",
         },
       },
     },

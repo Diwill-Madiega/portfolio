@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import '../App.css';
 
 function Contact() {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // Destructure 't' from the useTranslation hook
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,11 +20,11 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // Handle form submission logic here
+    console.log(formData); // Example: Logging form data
   };
 
   return (
-    <>
     <div style={{minHeight:"1000px"}}>
       <h1 className="text-center">{t("ContactTitle")}</h1>
       <form onSubmit={handleSubmit}>
@@ -33,11 +33,6 @@ function Contact() {
           <input
             type="text"
             className="form-control"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
           />
         </div><br />
         <div className="form-group">
@@ -45,11 +40,6 @@ function Contact() {
           <input
             type="email"
             className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
           />
         </div><br />
         <div className="form-group">
@@ -57,18 +47,13 @@ function Contact() {
           <textarea
             className="form-control"
             id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="5"
             required
-          ></textarea>
-        </div><br />
-        <button type="submit" className="btn btn-primary">{t("ContactSend")}</button>
-      </form>
-    </div>
-    </>
-  );
+            ></textarea>
+          </div><br />
+          <button type="submit" className="btn btn-primary">{t("ContactSend")}</button>
+        </form>
+      </div>
+    );
 }
 
 export default Contact;

@@ -1,7 +1,8 @@
+// src/components/PostCard.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import '../App.css';
+import { useTranslation } from "react-i18next";
 
 const PostCard = ({ post }) => {
   const { t } = useTranslation();
@@ -12,13 +13,11 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <>
     <div className="post-card">
       <h3>{post.title}</h3>
       <p>{post.body}</p>
       <button className="btn btn-primary" onClick={handleClick}>{t("BlogButton")}</button>
     </div>
-    </>
   );
 };
 
